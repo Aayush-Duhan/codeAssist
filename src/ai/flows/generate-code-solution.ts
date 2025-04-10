@@ -17,7 +17,8 @@ const GenerateCodeSolutionInputSchema = z.object({
 });
 export type GenerateCodeSolutionInput = z.infer<typeof GenerateCodeSolutionInputSchema>;
 
-const GenerateCodeSolutionOutputSchema = z.object({
+// Export the schema directly
+export const GenerateCodeSolutionOutputSchema = z.object({
   problemStatement: z.string().describe('A clear description of the problem.'),
   approach: z.string().describe('Explanation of how to solve the problem.'),
   codeSnippet: z.string().describe('A Python code example.'),
@@ -33,6 +34,7 @@ const GenerateCodeSolutionOutputSchema = z.object({
     )
     .describe('At least two test cases (input and output pairs).'),
 });
+// Type remains the same
 export type GenerateCodeSolutionOutput = z.infer<typeof GenerateCodeSolutionOutputSchema>;
 
 export async function generateCodeSolution(input: GenerateCodeSolutionInput): Promise<GenerateCodeSolutionOutput> {
