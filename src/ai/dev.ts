@@ -1,1 +1,2 @@
-// Flows will be imported for their side effects in this file.
+import '@/ai/flows/generate-code-solution.ts';
+import '@/ai/flows/answer-follow-up-question.ts';
